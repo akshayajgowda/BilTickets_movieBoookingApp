@@ -1,0 +1,31 @@
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>
+        BIL CINEMAS DETAILS
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+
+<ion-content>
+        <ion-img id="img2" src="{{movie.image_url}}"></ion-img>
+        <ion-card class="card1">
+            <ion-card-header>
+              <ion-card-subtitle>Treanding</ion-card-subtitle>
+              <ion-card-title>{{movie.name}}</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content>
+             {{movie.name}}
+            </ion-card-content>
+            <!-- <ion-input placeholder="Number of tickets" [(ngModel)]="num_tickets"></ion-input> -->
+         </ion-card> 
+</ion-content>
+
+    <ion-button id="button2" shape="round" (click)="onBook(movie)" >Book Now</ion-button>
+

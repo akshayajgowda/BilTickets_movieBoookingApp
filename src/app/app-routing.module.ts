@@ -1,20 +1,52 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+import { BookingComponent } from './booking/booking.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'booking/:id',
+    component: BookingComponent
+  },
+  {
+    path: 'booking',
+    component: BookingComponent
+  },
+  {
+    path: 'payment/:movie_time',
+    component: PaymentComponent
+  },
+  {
+    path: 'payment',
+    component: PaymentComponent
   },
   {
     path: 'home',
     loadChildren: './home/home.module#HomePageModule'
   },
   {
+    path: 'signup',
+    component: SignupComponent
+  },
+  {
+    path: 'details/:id',
+    loadChildren: './details/details.module#DetailsPageModule'
+  },
+  {
     path: 'list',
     loadChildren: './list/list.module#ListPageModule'
-  }
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,40 @@
+<ion-content>
+<ion-card>
+  <ion-item>
+    <!-- <ion-icon name="pin" slot="start"></ion-icon> -->
+    <ion-label>{{movie.name}}</ion-label>
+    <ion-button fill="outline" slot="end">View</ion-button>
+  </ion-item>
+
+  <ion-card-content>
+    {{movie.name}}
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-label>please enter the card details</ion-label><br>
+  <ion-input placeholder="NUMBER-OF-TICKETS" [(ngModel)]="tickets_need"></ion-input><br>
+
+  <ion-list>
+    
+    <ion-item>
+      <ion-label>Movie Time</ion-label>
+      <ion-select [(ngModel)]="movie_time" value="brown" okText="Okay" cancelText="Dismiss">
+        <ion-select-option value="10:00AM">10:00AM</ion-select-option>
+        <ion-select-option value="12:30PM">12:30PM</ion-select-option>
+        <ion-select-option value="2:15PM">2:15PM</ion-select-option>
+        <ion-select-option value="7:00PM">7:00PM</ion-select-option>
+      </ion-select>
+    </ion-item>
+  
+  </ion-list>
+
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime [(ngModel)]="movie_date" picker-format="  MM DD, YYYY" display-format="MM DD, YYYY"></ion-datetime>
+  </ion-item>
+<!-- <ion-button (click)="onBooking(bookinfo)">Make Payment</ion-button> -->
+  <!-- <ion-input placeholder="MOVIE-TIME" [(ngModel)]="movieTime"></ion-input><br> -->
+</ion-card>
+</ion-content>
+<ion-button id="button2" shape="round" (click)="onBooking()">Make Payment</ion-button>

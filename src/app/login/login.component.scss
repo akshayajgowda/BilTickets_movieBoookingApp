@@ -1,0 +1,27 @@
+ion-content{
+    --background: url('/assets/movie.png');
+    --color: white;
+}
+
+.sam{
+    margin-top: 150px; 
+}
+
+.round {
+    border-radius: 25px;
+}
+
+.white {
+    --background : white;
+}
+
+.f-size {
+    font-size: 40px;
+}
+
+.flt{
+    float: right;
+    margin-right: 20px;
+    margin-top: 10px;
+    color: white;
+}

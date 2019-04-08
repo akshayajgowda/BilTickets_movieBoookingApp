@@ -2,3 +2,34 @@
   max-height: 35vh;
   overflow: hidden;
 }
+
+.card1 {
+  position: relative ;
+  top:0;
+  margin-top:285px;
+  background : white;
+}
+
+#button1{
+    
+  --background: yellowgreen;
+    float: right;
+    margin-top: -50px;
+    margin-right: 30px;
+}
+#button2{
+    
+  --background: yellowgreen;
+    margin-left:20px; 
+}
+#img2 
+{
+  position: absolute;
+}
+
+.set_text{
+  text-align: center;
+}
+
+
+

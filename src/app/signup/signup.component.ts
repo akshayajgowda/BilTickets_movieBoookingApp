@@ -9,14 +9,17 @@ import { CustomerService } from '../customer.service';
 })
 export class SignupComponent implements OnInit {
   
-
+  customers=[];
   customer = {name:'', address:'', email:'', phone:'', password:''};
 
   constructor(private router:Router, private customerService:CustomerService) { }
 
   onSignUp(customer) {
-    this.customerService.addRemoteCustomer(customer).subscribe(()=>{this.router.navigate(['/login']);});
-  }
+   
+      this.customerService.addRemoteCustomer(customer).subscribe(()=>{this.router.navigate(['/login']);});
+  
+    }
+   
 
 
   goBack() {
@@ -24,6 +27,8 @@ export class SignupComponent implements OnInit {
   }
   
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
 
 }

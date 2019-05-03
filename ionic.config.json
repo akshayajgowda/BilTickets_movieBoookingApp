@@ -1,5 +1,7 @@
 {
   "name": "bilTickets",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

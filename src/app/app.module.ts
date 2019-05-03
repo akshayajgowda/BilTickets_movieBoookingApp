@@ -12,20 +12,26 @@ import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookingComponent } from './booking/booking.component';
 import { PaymentComponent } from './payment/payment.component';
+import { GooglemapsComponent } from './googlemaps/googlemaps.component';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
-  declarations: [AppComponent, PaymentComponent, LoginComponent, BookingComponent, SignupComponent],
+  declarations: [AppComponent, GooglemapsComponent,PaymentComponent, LoginComponent, BookingComponent, SignupComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+   
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    Geolocation,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

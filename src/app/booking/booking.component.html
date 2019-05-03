@@ -3,19 +3,27 @@
   <ion-item>
     <!-- <ion-icon name="pin" slot="start"></ion-icon> -->
     <ion-label>{{movie.name}}</ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
+    <ion-button (click)="google_maps()" fill="outline" slot="end">View</ion-button>
   </ion-item>
 
   <ion-card-content>
-    {{movie.name}}
+    <p>17 Mar,2019</p>
   </ion-card-content>
 </ion-card>
 
 <ion-card>
-  <ion-label>please enter the card details</ion-label><br>
-  <ion-input placeholder="NUMBER-OF-TICKETS" [(ngModel)]="tickets_need"></ion-input><br>
-
-  <ion-list>
+  <ion-item>
+      <ion-label>Tickets</ion-label>
+  <ion-input  [(ngModel)]="tickets_need"></ion-input>  <br>
+</ion-item>
+  
+      <ion-item>
+        <ion-label>Gender</ion-label>
+          <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+            <ion-select-option value="f">Female</ion-select-option>
+            <ion-select-option value="m">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
     
     <ion-item>
       <ion-label>Movie Time</ion-label>
@@ -27,14 +35,23 @@
       </ion-select>
     </ion-item>
   
-  </ion-list>
+  <ion-item>
+    <ion-label>Select City</ion-label>
+    <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="kolkata">Kolkata</ion-select-option>
+      <ion-select-option value="banglore">Banglore</ion-select-option>
+      <ion-select-option value="delhi">Delhi</ion-select-option>
+      <ion-select-option value="mumbai">Mumbai</ion-select-option>
+    </ion-select>
+  </ion-item>
 
   <ion-item>
     <ion-label>Date</ion-label>
     <ion-datetime [(ngModel)]="movie_date" picker-format="  MM DD, YYYY" display-format="MM DD, YYYY"></ion-datetime>
   </ion-item>
-<!-- <ion-button (click)="onBooking(bookinfo)">Make Payment</ion-button> -->
-  <!-- <ion-input placeholder="MOVIE-TIME" [(ngModel)]="movieTime"></ion-input><br> -->
+
 </ion-card>
 </ion-content>
+
+
 <ion-button id="button2" shape="round" (click)="onBooking()">Make Payment</ion-button>

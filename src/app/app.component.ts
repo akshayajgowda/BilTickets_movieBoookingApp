@@ -16,19 +16,14 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'List',
+      title: 'My Offers',
       url: '/list',
-      icon: 'list'
-    },
-    {
-      title: 'login',
-      url: '/login',
-      icon: 'list'
+      icon: 'appstore'
     },
     {
       title: 'logout',
       url: '/login',
-      icon: 'list'
+      icon: 'redo'
     }
   ];
 

@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { BookingComponent } from './booking/booking.component';
 import { PaymentComponent } from './payment/payment.component';
+import { GooglemapsComponent } from './googlemaps/googlemaps.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'googlemaps',
+    component: GooglemapsComponent
   },
   {
     path: 'booking/:id',

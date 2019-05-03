@@ -1,34 +1,39 @@
-<ion-card>
-  <ion-item>
-    <ion-icon name="pin" slot="start"></ion-icon>
-    <ion-label>ion-item in a card, icon left, button right</ion-label>
-    <ion-button fill="outline" slot="end">View</ion-button>
-  </ion-item>
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons (click)="goBack()"><ion-icon class="f-size" name="arrow-round-back"></ion-icon>
+   </ion-buttons>
+  <ion-title>
+    Get Offers
+  </ion-title>
+</ion-toolbar>
+</ion-header>
 
-  <ion-card-content>
-    This is content, without any paragraph or header tags,
-    within an ion-card-content element.
-  </ion-card-content>
-</ion-card>
+<ion-content>
 
-<ion-card>
-  <ion-item href="#" class="activated">
-    <ion-icon name="wifi" slot="start"></ion-icon>
-    <ion-label>Card Link Item 1 .activated</ion-label>
-  </ion-item>
+  <ion-slides #mySlider autoplay="1000" loop="true" speed="500" pager="true" (ionSlidesDidLoad)="slideChanged(mySlider)" [options]="slideOpts" >
+    <ion-slide >
+      <ion-img src="http://isnamsterdam.nl/wp-content/uploads/2018/11/45636076_1160651824088347_3184360294524649472_o.jpg"  class="pr"></ion-img>  
+    </ion-slide>
+    <ion-slide>
+        <ion-img src="http://nicufamiliesnw.org/wp-content/uploads/2018/05/Movie-Night-copy.jpg" class="pr"></ion-img> 
+    </ion-slide>
+    <ion-slide>
+        <ion-img src="http://www.appliedart.com/Copy%20of%20Blog%20jpg.jpg" class="pr"></ion-img> 
+    </ion-slide>
+    <ion-slide>
+        <ion-img src="http://fineartstheatreplace.com/fatp/wp-content/uploads/2017/06/pop.jpg" class="pr"></ion-img> 
+    </ion-slide>
+    <ion-slide>
+        <ion-img src="https://images.wallpaperscraft.com/image/movie_popcorn_drink_11134_1920x1080.jpg" class="pr"></ion-img> 
+    </ion-slide>  
+</ion-slides>
 
-  <ion-item href="#">
-    <ion-icon name="wine" slot="start"></ion-icon>
-    <ion-label>Card Link Item 2</ion-label>
-  </ion-item>
+<ion-grid>
+  <ion-img src="http://blog.marketmagnify.com/wp-content/uploads/2018/07/GarciniaOrder-1.gif"></ion-img>
+</ion-grid>
 
-  <ion-item class="activated">
-    <ion-icon name="warning" slot="start"></ion-icon>
-    <ion-label>Card Button Item 1 .activated</ion-label>
-  </ion-item>
+<ion-grid>
+  <ion-img src="http://www.hotelvillarosaroma.eu/files/special_offer2.gif"></ion-img>
+</ion-grid>
 
-  <ion-item>
-    <ion-icon name="walk" slot="start"></ion-icon>
-    <ion-label>Card Button Item 2</ion-label>
-  </ion-item>
-</ion-card>
+</ion-content>

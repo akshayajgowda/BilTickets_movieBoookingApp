@@ -1,8 +1,6 @@
 <ion-header>
     <ion-toolbar color="dark">
-      <ion-buttons (click)="goBack()"><ion-icon class="f-size" name="arrow-round-back"></ion-icon>
-      </ion-buttons>
-      <ion-title>
+      <ion-title style="text-align:center">
         Login
       </ion-title>
     </ion-toolbar>
@@ -26,7 +24,7 @@
             <div padding>
               <ion-button size="large" type="submit"  expand="block" (click)="onLogin(customer)">Login</ion-button>
               
-              <ion-checkbox class="white" checked="false"></ion-checkbox>
+              <ion-checkbox class="white" checked="true"></ion-checkbox>
               <ion-label>Remember me</ion-label>
                 <a class="flt" (click)="presentActionSheet()">Forget Password</a>
             </div>
@@ -34,6 +32,24 @@
                 <ion-button size="large" type="submit"  expand="block" (click)="onRegister()">Sign Up</ion-button>
               </div>
           </ion-col>
+        </ion-row>
+      
+        <ion-row>
+          <ion-col align-self-start>
+              <ion-button color="primary" expand="block" href="https://www.facebook.com/" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+                </ion-button>
+          </ion-col>
+          <ion-col align-self-center>
+              <ion-button color="secondary" expand="block" href="https://twitter.com/login" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col align-self-end>
+              <ion-button color="danger" expand="block" href="https://plus.google.com" target="_blank">
+                <ion-icon name="logo-googleplus"></ion-icon>
+              </ion-button>
+            </ion-col>
         </ion-row>
       </ion-grid>
    

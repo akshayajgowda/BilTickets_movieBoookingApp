@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { CustomerService } from '../customer.service';
+import { Storage } from '@ionic/storage';
+//plugin Geolocation
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+
 
 @Component({
   selector: 'app-login',
@@ -11,13 +16,13 @@ import { CustomerService } from '../customer.service';
 export class LoginComponent implements OnInit {
   customer ={ name:'', password:'', address:'', email:'', phone:''};
 customers= [];
-  constructor(private router:Router, private customerService:CustomerService, public actionSheetController: AlertController) {
+  constructor(private router:Router, private storage: Storage, private customerService:CustomerService, public actionSheetController: AlertController,private geolocation:Geolocation) {
 
   }
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Send to mail',
+      header: 'Send me mail',
       inputs: [{
         name: 'email',
         placeholder: 'Enter your email',
@@ -37,6 +42,9 @@ customers= [];
 
   ngOnInit() {this.customerService.getRemoteCustomers().subscribe((result)=>this.customers=result);};
 
+
+
+
   // For login page
 onLogin(customer) {
   console.log(customer.name);
@@ -44,9 +52,30 @@ onLogin(customer) {
   for(var i=0;i<this.customers.length;i++){
   if((this.customers[i].name===customer.name) && (this.customers[i].password===customer.password)) {
     localStorage.setItem('customerdata',JSON.stringify(this.customers[i]));
+    
+    this.getLocation();
   this.router.navigate(['/home']);
     }
+   
   }
+}
+
+getLocation(){
+  this.geolocation.getCurrentPosition().then((resp) => {
+    // resp.coords.latitude
+    // resp.coords.longitude
+    console.log(resp.coords.latitude);
+    console.log(resp.coords.longitude);
+   }).catch((error) => {
+     console.log('Error getting location', error);
+   });
+   
+   let watch = this.geolocation.watchPosition();
+   watch.subscribe((data) => {
+    // data can be a set of coordinates, or an error (if an error occurred).
+    // data.coords.latitude
+    // data.coords.longitude
+   });
 }
 
 // onLogin(customer) {
